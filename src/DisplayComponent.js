@@ -11,7 +11,7 @@ const DisplayComponent = () => {
     return (
         <div>
             <Header/>
-        <Container>
+        <Container fluid>
             {/*<Row>*/}
             {/*    <Col><Header/></Col>*/}
             {/*</Row>*/}
