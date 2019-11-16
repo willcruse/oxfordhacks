@@ -9,24 +9,39 @@ const videoConstraints = {
 
 
 const CameraComponent = () => {
+
     const webcamRef = React.useRef(null);
 
     const capture = React.useCallback(
         () => {
-            const imageSrc = webcamRef.current.getScreenshot();
+            var imgArr = [];
+            var timesRun = 0;
+            var interval = setInterval(function(){
+                console.log("push")
+                if (timesRun == 4000) {
+                    clearInterval(interval);
+                    console.log(imgArr);
+                }
+                timesRun++;
+                imgArr.push(webcamRef.current.getScreenshot());
+            }, 25);
         },
         [webcamRef]
     );
 
+
     return (
+        <div>
         <Webcam
-            // style={{ transform: 'rotate(90deg)' }}
             audio={false}
             ref={webcamRef}
             screenshotFormat="image/jpeg"
             width={500}
             videoConstraints={videoConstraints}
+            capture={capture}
         />
+        <button onClick={capture}>Dance, Dance</button>
+        </div>
     );
 }
 

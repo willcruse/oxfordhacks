@@ -13,7 +13,7 @@ const DisplayComponent = () => {
                 <Col><h1>Mimic Me</h1></Col>
             </Row>
             <Row >
-                <Col><InfoComponent info={true}/></Col>
+                <Col><InfoComponent /></Col>
                 <Col><CameraComponent /></Col>
                 <Col><MusicComponent /></Col>
             </Row>
