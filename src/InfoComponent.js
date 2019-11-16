@@ -13,9 +13,11 @@ export default class InfoComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            titleText: "Hello",
+            titleText: "How to Play",
             bodyText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultrices iaculis massa, ut finibus velit euismod eu. Sed vehicula tortor auctor ultrices bibendum. Pellentesque a ligula aliquet, euismod augue congue, blandit leo. Donec sit amet nulla ac urna mollis ullamcorper. Cras nisl diam, tincidunt ut arcu vitae, posuere commodo urna. Morbi ac blandit tellus. Maecenas porttitor finibus mollis. Sed iaculis pellentesque augue, id dignissim risus semper quis. Vivamus et rutrum tellus. Integer ut ipsum lacus. Cras laoreet, arcu nec dictum scelerisque, dolor lorem semper nisl, a mollis tortor augue ac nulla. Nunc lacus lectus, tempus quis ex sit amet, condimentum dictum felis. Sed ultrices iaculis purus, at ornare leo iaculis eu. Nullam suscipit tincidunt purus vitae convallis. Nam condimentum mi sit amet enim semper, quis porttitor est placerat. Vestibulum pharetra lacinia elit, consequat suscipit dolor interdum ut.',
-            info: true
+            info: true,
+            p1Score : 0,
+            p2Score : 0
         };
 
         this.clickHandler = this.clickHandler.bind(this);
@@ -41,7 +43,18 @@ export default class InfoComponent extends React.Component {
                 </p>
             );
         } else {
-            return(<h1>header</h1>)
+            return(<div><h1>Scores</h1>
+                    <p style={styles.baseText}>
+                        <p></p>
+                        <p numberOfLines = {1}>
+                            Player 1:   {this.state.p1Score}
+                        </p>
+                        <p style={styles.baseText}>
+                            Player 2:   {this.state.p2Score}
+                        </p>
+                    </p>
+                </div>
+            );
         }
     }
 }
