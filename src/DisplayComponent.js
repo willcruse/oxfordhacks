@@ -3,6 +3,7 @@ import CameraComponent from "./CameraComponent"
 import {Container, Row, Col} from "react-bootstrap"
 import InfoComponent from "./InfoComponent";
 import MusicComponent from "./MusicComponent";
+import Header from "./Header";
 
 
 const DisplayComponent = () => {
@@ -10,7 +11,7 @@ const DisplayComponent = () => {
     return (
         <Container>
             <Row>
-                <Col><h1>Mimic Me</h1></Col>
+                <Col><Header/></Col>
             </Row>
             <Row >
                 <Col><InfoComponent info={true}/></Col>
