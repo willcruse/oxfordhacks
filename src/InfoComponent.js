@@ -23,23 +23,22 @@ export default class InfoComponent extends React.Component {
         this.clickHandler = this.clickHandler.bind(this);
     }
 
-
-
-    clickHandler(event) {
-        event.preventDefault();
+    clickHandler() {
         this.setState({info: false});
     }
+//onPress={this.onPressTitle}
+//numberOfLines={5}
     render() {
         if (this.state.info) {
             return (
                 <p style={styles.baseText}>
-                    <p style={styles.titleText} onPress={this.onPressTitle}>
+                    <p style={styles.titleText} >
                         {this.state.titleText}{'\n'}{'\n'}
                     </p>
-                    <p numberOfLines={5}>
+                    <p >
                         {this.state.bodyText}
                     </p>
-                    <button onClick={this.clickHandler}>Click Me</button>
+                    <button onClick={this.clickHandler}>Scores</button>
                 </p>
             );
         } else {

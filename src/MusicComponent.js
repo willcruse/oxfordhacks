@@ -7,7 +7,7 @@ class MusicComponent extends React.Component {
         super(props);
 
         this.state = {
-            "currentSong": "Ohio is for emo kids"
+            "currentSong": "Ohio is for Emo Kids"
         }
 
         this.handleClick = this.handleClick.bind(this);
@@ -31,7 +31,7 @@ class MusicComponent extends React.Component {
                 }
                 </ListGroup></Col></Row>
                 <Row><Col><p>{"Current Song: " + this.state.currentSong}</p></Col></Row>
-                <Row><Col><audio src={songs.key} controls></audio></Col></Row>
+                <Row><Col><audio src={songs[this.state.currentSong]} controls></audio></Col></Row>
             </Container>
         );
     }

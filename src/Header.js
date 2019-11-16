@@ -4,7 +4,7 @@ import {Navbar} from "react-bootstrap";
 const Header = () => {
     return (
         <Navbar bg="light" expand="lg">
-            <Navbar.Brand>Mimic Me</Navbar.Brand>
+            <Navbar.Brand href="#home">Mimic Me</Navbar.Brand>
         </Navbar>);
 };
 
