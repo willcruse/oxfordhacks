@@ -41,7 +41,7 @@ export default class InfoComponent extends React.Component {
                 </p>
             );
         } else {
-            return(<h1>GAYYY</h1>)
+            return(<h1>header</h1>)
         }
     }
 }
