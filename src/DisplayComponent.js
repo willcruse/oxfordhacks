@@ -14,7 +14,7 @@ const DisplayComponent = () => {
                 <Col><Header/></Col>
             </Row>
             <Row >
-                <Col><InfoComponent info={true}/></Col>
+                <Col><InfoComponent /></Col>
                 <Col><CameraComponent /></Col>
                 <Col><MusicComponent /></Col>
             </Row>
