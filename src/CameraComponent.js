@@ -1,5 +1,6 @@
 import React from "react";
 import Webcam from "react-webcam";
+import { Button } from "react-bootstrap";
 
 const videoConstraints = {
     width: 1280,
@@ -40,7 +41,7 @@ const CameraComponent = () => {
             videoConstraints={videoConstraints}
             capture={capture}
         />
-        <button onClick={capture}>Dance, Dance</button>
+        <Button onClick={capture}>Dance, Dance</Button>
         </div>
     );
 }
