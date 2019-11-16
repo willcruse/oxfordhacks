@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import DisplayComponent from './DisplayComponent';
 
 const App = () => {
     return(
@@ -7,6 +9,6 @@ const App = () => {
     )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<DisplayComponent />, document.getElementById('root'));
 
 
