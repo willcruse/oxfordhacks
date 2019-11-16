@@ -18,7 +18,7 @@ const DisplayComponent = () => {
             <Row >
                 <Col><InfoComponent /></Col>
                 <Col><CameraComponent /></Col>
-                <Col><MusicComponent /></Col>
+                <Col><MusicComponent currentSong="Hello World"/></Col>
             </Row>
         </Container>
         </div>
