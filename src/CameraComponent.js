@@ -17,16 +17,16 @@ const CameraComponent = () => {
         },
         [webcamRef]
     );
-    
+
     return (
         <Webcam
-                audio={false}
-                height={720}
-                ref={webcamRef}
-                screenshotFormat="image/jpeg"
-                width={1280}
-                videoConstraints={videoConstraints}
-            />
+            // style={{ transform: 'rotate(90deg)' }}
+            audio={false}
+            ref={webcamRef}
+            screenshotFormat="image/jpeg"
+            width={500}
+            videoConstraints={videoConstraints}
+        />
     );
 }
 
