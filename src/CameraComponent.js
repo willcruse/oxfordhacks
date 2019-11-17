@@ -51,7 +51,7 @@ const CameraComponent = () => {
         var imgArrB = [];
         var timesRunB = 0;
         var interval = setInterval(function () {
-            if (timesRunB === 100) {
+            if (timesRunB === 210) {
                 clearInterval(interval);
                 audio.pause()
                 imgArrMaster.push(imgArrB);
