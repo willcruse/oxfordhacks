@@ -60,9 +60,11 @@ export default class InfoComponent extends React.Component {
 const styles = {
     baseText: {
         fontFamily: 'Cochin',
+        "color":"white",
     },
     titleText: {
         fontSize: 20,
         fontWeight: 'bold',
+        "color":"white",
     },
 };

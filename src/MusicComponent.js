@@ -22,7 +22,7 @@ class MusicComponent extends React.Component {
         var keys = Object.keys(songs);
         console.log(this.state.currentSong);
         return (
-            <Container>
+            <Container style={{"opacity": 1}}>
                 <Row><Col><ListGroup>
                 {
                     keys.map(item => {
@@ -30,7 +30,11 @@ class MusicComponent extends React.Component {
                     })
                 }
                 </ListGroup></Col></Row>
+<<<<<<< Updated upstream
                 <Row><Col><p>{"Current Song: " + this.state.currentSong}</p></Col></Row>
+=======
+                <Row><Col><p style = {{"color":"white"}}>{"Current Song: " + this.state.currentSong}</p></Col></Row>
+>>>>>>> Stashed changes
                 <Row><Col><audio src={songs[this.state.currentSong]} controls></audio></Col></Row>
             </Container>
         );
