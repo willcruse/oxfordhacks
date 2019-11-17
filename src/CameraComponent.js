@@ -27,7 +27,7 @@ const CameraComponent = () => {
 
     const capturePlayerA = React.useCallback(
         () => {
-
+            audio.play()
             var imgArr = [];
             var timesRun = 0;
             var interval = setInterval(function(){
