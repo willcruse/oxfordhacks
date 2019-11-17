@@ -1,7 +1,8 @@
 import React from "react";
 import Webcam from "react-webcam";
-import { Button } from "react-bootstrap";
+import { Button, Col, Row, Container } from "react-bootstrap";
 import ServerDetails from "./ServerDetails"
+import Songs from "./Songs"
 
 const videoConstraints = {
     width: 1280,
@@ -138,8 +139,6 @@ const CameraComponent = () => {
     //     [webcamRef]
     // );
 
-<<<<<<< HEAD
-=======
     return (
         <Container>
             <Col><Row><Webcam
@@ -155,20 +154,7 @@ const CameraComponent = () => {
             </Row></Col>
             {/* <Col><Row><MusicComponent play={false} /></Row></Col> */}
         </Container>
-
-    return (
-        <div>
-        <Webcam
-            audio={false}
-            ref={webcamRef}
-            screenshotFormat="image/jpeg"
-            width={window.width}
-            videoConstraints={videoConstraints}
-            capture={capture}
-        />
-        <Button onClick={capture}>Dance, Dance</Button>
-        </div>
-    );
+    )
 }
 
 export default CameraComponent;
