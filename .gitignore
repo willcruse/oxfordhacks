@@ -26,3 +26,5 @@ yarn-error.log*
 .vscode/
 
 backend/output.mp4
+
+*.mp4

@@ -19,6 +19,24 @@ def data_uri_to_cv2_img(uri):
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}}, send_wildcard=True)
 
+
+def imgsToVid(imgArr, id):
+    image_list_temp = imgArr
+    image_decoded = []
+    for image in image_list_temp:
+        encoded_data = image.split(',')[1]
+        nparr = np.frombuffer(base64.b64decode(encoded_data), np.uint8)
+        img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+        image_decoded.append(img)
+    height, width, _ = image_decoded[0].shape
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # Be sure to use lower case
+    video = cv2.VideoWriter("output{}.mp4".format(id), fourcc, 20.0, (width, height))
+    for image in image_decoded:
+        video.write(image)
+    cv2.destroyAllWindows()
+    video.release()
+
+
 @app.route("/getResponse", methods=["POST"])
 def getResponse():
     # Set CORS headers for the preflight request
@@ -38,27 +56,12 @@ def getResponse():
     headers = {
         'Access-Control-Allow-Origin': '*',
     }
-    print("hello", file=sys.stderr)
     try:
         if 'images' not in list(request_json.keys()):
             return ('no-images', 400, headers)
-        image_list_temp = request_json.get("images")
-        image_decoded = []
-        for image in image_list_temp:
-            encoded_data = image.split(',')[1]
-            nparr = np.frombuffer(base64.b64decode(encoded_data), np.uint8)
-            img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-            image_decoded.append(img)
-
-        height, width, _ = image_decoded[0].shape
-        fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # Be sure to use lower case
-        video = cv2.VideoWriter("output.mp4", fourcc, 20.0, (width, height))
-
-        for image in image_decoded:
-            video.write(image)
-        cv2.destroyAllWindows()
-        video.release()
-
+        images = request_json.get("images")
+        for i in range(len(images)):
+            imgsToVid(images[i], i)
     except Exception as e:
         print(e, file=sys.stderr)
         return(str(e), 500, headers)
