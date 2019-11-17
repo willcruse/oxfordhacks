@@ -1,6 +1,7 @@
 import React from "react";
 import Webcam from "react-webcam";
 import { Button } from "react-bootstrap";
+import ServerDetails from "./ServerDetails"
 
 const videoConstraints = {
     width: 1280,
@@ -18,14 +19,29 @@ const CameraComponent = () => {
             var imgArr = [];
             var timesRun = 0;
             var interval = setInterval(function(){
-                console.log("push")
-                if (timesRun == 4000) {
+                if (timesRun === 210) {
                     clearInterval(interval);
-                    console.log(imgArr);
+                    var data = {
+                        "images": imgArr
+                    }
+                    fetch("http://"+ServerDetails.TOGETHER+"/getResponse", {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            // 'Access-Control-Allow-Origin': '*'
+                        },
+                        body: JSON.stringify(data)
+                    }).then((resp) => {
+                        return resp;
+                    }).then((json) => {
+                        console.log(json);
+                    }).catch((error) => {
+                        console.log(error);
+                    })
                 }
                 timesRun++;
                 imgArr.push(webcamRef.current.getScreenshot());
-            }, 25);
+            }, 50);
         },
         [webcamRef]
     );
@@ -37,7 +53,7 @@ const CameraComponent = () => {
             audio={false}
             ref={webcamRef}
             screenshotFormat="image/jpeg"
-            width={500}
+            width={window.width}
             videoConstraints={videoConstraints}
             capture={capture}
         />
