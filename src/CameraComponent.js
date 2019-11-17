@@ -16,7 +16,7 @@ const CameraComponent = () => {
     const webcamRef = React.useRef(null);
 
 
-    var audio = new Audio(Songs["Wii Theme Song"]);
+    var audio = new Audio(Songs["Baby Shark"]);
     audio.loop = true;
     var imgArrMaster = [];
     const sleep = (milliseconds) => {

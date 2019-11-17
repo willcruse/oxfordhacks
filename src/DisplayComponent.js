@@ -4,7 +4,6 @@ import { Container, Row, Col } from "react-bootstrap"
 import InfoComponent from "./InfoComponent";
 import MusicComponent from "./MusicComponent";
 import Header from "./Header";
-import Cookies from "universal-cookie";
 
 
 
