@@ -93,6 +93,8 @@ const CameraComponent = () => {
         [webcamRef]
     );
 
+<<<<<<< HEAD
+=======
     return (
         <Container>
             <Col><Row><Webcam
