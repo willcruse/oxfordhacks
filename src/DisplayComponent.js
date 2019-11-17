@@ -1,26 +1,34 @@
 import React from "react";
 import CameraComponent from "./CameraComponent"
-import {Container, Row, Col} from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 import InfoComponent from "./InfoComponent";
 import MusicComponent from "./MusicComponent";
 import Header from "./Header";
+import Cookies from "universal-cookie";
 
 
-const DisplayComponent = () => {
 
-    return (
-        <div style = {{"background-color":"#303030"}}>
-            <Header/>
-        <Container fluid style={{"opacity": 1}}>
-            <Row style={{"opacity": 1}}>
+class DisplayComponent extends React.Component {
 
-                <Col><InfoComponent /></Col>
-                <Col><CameraComponent /></Col>
-                <Col><MusicComponent /></Col>
-            </Row>
-        </Container>
-        </div>
-    );
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div style={{ "background-color": "black" }}>
+                <Header />
+                <Container fluid style={{ "opacity": 1 }}>
+                    <Row style={{ "opacity": 1 }}>
+                        <Col xs lg="2"><InfoComponent /></Col>
+                        <CameraComponent s/>
+                        <Col><MusicComponent /></Col>
+                    </Row>
+                </Container>
+            </div >
+        );
+    }
+
 }
 
 export default DisplayComponent;

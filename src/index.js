@@ -7,8 +7,8 @@ import DisplayComponent from './DisplayComponent';
 //     return(
 //         <h1>HELLO</h1>
 //     )
-// }
-document.body.style = 'background: #303030;';
+// } #303030
+document.body.style = 'background: black;';
 ReactDOM.render(<DisplayComponent style={{"background-color": "black"}}/>, document.getElementById('root'));
 
 
