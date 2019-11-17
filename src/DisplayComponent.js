@@ -12,13 +12,10 @@ const DisplayComponent = () => {
         <div>
             <Header/>
         <Container fluid>
-            {/*<Row>*/}
-            {/*    <Col><Header/></Col>*/}
-            {/*</Row>*/}
             <Row >
                 <Col><InfoComponent /></Col>
                 <Col><CameraComponent /></Col>
-                <Col><MusicComponent currentSong="Hello World"/></Col>
+                <Col><MusicComponent /></Col>
             </Row>
         </Container>
         </div>
