@@ -14,7 +14,7 @@ export default class InfoComponent extends React.Component {
         super(props);
         this.state = {
             titleText: "How to Play",
-            bodyText: 'To play the game, select a song and player 1 stand in front of the camera ready to dance! Next player 1 should press the "Dance PlayerA" button to record their cool moves :). Next player 2 should stand in front of the camera and press the "Dance PlayerB" button to attempt to copy player 1s dance moves.',
+            bodyText: 'To play the game, select a song and player 1 stand in front of the camera ready to dance! Next player 1 should press the "Dance PlayerA" button to record their cool moves :). Next player 2 should stand in front of the camera and press the "Dance PlayerB" button to attempt to copy player 1s dance moves.      The closer a player is to 0 the better - 0 means you have matched the other players moves perfectly.        Press Scores to present the scores...',
             info: true,
             p1Score : 0,
             p2Score : 0
